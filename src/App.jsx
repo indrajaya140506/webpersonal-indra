@@ -1,3 +1,4 @@
+import React from 'react';
 import DataImage from "./data";
 import { listTools, listHobi, listPortofolio } from "./data";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
