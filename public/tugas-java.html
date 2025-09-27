@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas Java</title>
+  <style>
+    /* Background halaman */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      background: #0f0f0f; /* Hitam gelap */
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    /* Jam digital */
+    #jamDigital {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      font-weight: bold;
+      color: #00ffea;
+    }
+
+    /* Navbar */
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+      margin-bottom: 40px;
+    }
+
+    nav li a {
+      text-decoration: none;
+      color: #fff;
+      background-color: #ff6b6b;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav li a:hover {
+      background-color: #ff4757;
+      transform: scale(1.05);
+    }
+
+    /* Card tugas */
+    .task-card {
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      margin-bottom: 30px;
+      text-align: center;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .task-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+    }
+
+    /* Background berbeda tiap card */
+    #luasCard {
+      background: linear-gradient(145deg, #ff9a9e, #fad0c4); /* Pink ke soft */
+    }
+
+    #kalkulatorCard {
+      background: linear-gradient(145deg, #84fab0, #8fd3f4); /* Hijau ke biru */
+    }
+
+    .task-card h2 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .task-card input {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 80%;
+      max-width: 200px;
+      text-align: center;
+    }
+
+    .task-card button {
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #333;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .task-card button:hover {
+      background-color: #ddd;
+    }
+
+    .task-card .result {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1 class="judul-tugas">TUGAS-JAVA</h1>
+
+<style>
+  .judul-tugas {
+    text-align: center;               /* Tengah horizontal */
+    font-size: 3rem;                  /* Ukuran besar */
+    color: #00ffea;                   /* Warna cyan */
+    text-shadow: 2px 2px 10px #ff6b6b, 0 0 20px #ffa502; /* Efek neon */
+    font-weight: bold;                /* Tebal */
+    margin-bottom: 40px;              /* Jarak bawah */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: glow 1.5s ease-in-out infinite alternate; /* Animasi neon */
+  }
+
+  @keyframes glow {
+    from {
+      text-shadow: 2px 2px 10px #ff6b6b, 0 0 20px #ffa502;
+    }
+    to {
+      text-shadow: 2px 2px 20px #ff6b6b, 0 0 40px #00ffea;
+    }
+  }
+</style>
+
+
+  <!-- Jam Digital -->
+  <div id="jamDigital"></div>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="tugas-java.html">Tugas Java</a></li>
+    </ul>
+  </nav>
+
+  <!-- Tugas 1: Hitung Luas Persegi -->
+  <div class="task-card" id="luasCard">
+    <h2>Hitung Luas Persegi</h2>
+    <input type="number" id="sisi" placeholder="Sisi persegi">
+    <button onclick="hitungLuas()">Hitung Luas</button>
+    <div class="result" id="luasResult"></div>
+  </div>
+
+  <!-- Tugas 2: Kalkulator Sederhana -->
+  <div class="task-card" id="kalkulatorCard">
+    <h2>Kalkulator Sederhana</h2>
+    <input type="number" id="angka1" placeholder="Angka 1">
+    <input type="number" id="angka2" placeholder="Angka 2">
+    <button onclick="hitungTambah()">Jumlahkan</button>
+    <div class="result" id="kalkulatorResult"></div>
+  </div>
+
+  <script>
+    // Fungsi Hitung Luas Persegi
+    function hitungLuas() {
+      const sisi = document.getElementById("sisi").value;
+      const luas = sisi * sisi;
+      document.getElementById("luasResult").innerText = "Luas persegi: " + luas;
+    }
+
+    // Fungsi Kalkulator Sederhana
+    function hitungTambah() {
+      const a = Number(document.getElementById("angka1").value);
+      const b = Number(document.getElementById("angka2").value);
+      const hasil = a + b;
+      document.getElementById("kalkulatorResult").innerText = "Hasil: " + hasil;
+    }
+
+    // Jam digital
+    function updateJam() {
+      const now = new Date();
+      let h = now.getHours();
+      let m = now.getMinutes();
+      let s = now.getSeconds();
+      h = h < 10 ? '0'+h : h;
+      m = m < 10 ? '0'+m : m;
+      s = s < 10 ? '0'+s : s;
+      document.getElementById('jamDigital').innerText = h + ':' + m + ':' + s;
+    }
+    setInterval(updateJam, 1000);
+    updateJam(); // panggil langsung agar tidak kosong saat load
+  </script>
+
+</body>
+</html>

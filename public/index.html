@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beranda</title>
+
+  <style>
+    /* Body & background */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #fff;
+    }
+
+    /* Judul utama */
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin: 30px 0 20px 0;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+
+    /* Style Navbar */
+    .navbar {
+      list-style: none;        /* Hilangkan bullet */
+      display: flex;           /* Horizontal */
+      gap: 20px;               /* Jarak antar link */
+      padding: 0;
+      margin: 20px 0;
+      justify-content: center; /* Tengah */
+    }
+
+    .navbar li a {
+      text-decoration: none;   /* Hilangkan garis bawah */
+      color: #fff;             /* Warna teks */
+      background-color: rgba(0,0,0,0.3); /* Tombol transparan */
+      padding: 10px 20px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .navbar li a:hover {
+      background-color: rgba(255,255,255,0.2);
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+    /* Welcome paragraph */
+    .welcome-text {
+      font-size: 1.8rem;         /* Ukuran lebih besar */
+      text-align: center;        /* Tengah */
+      font-weight: bold;         /* Tebal */
+      margin: 30px 0;            /* Jarak atas dan bawah */
+      padding: 20px 30px;
+      border-radius: 15px;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Silahkan Beralih Halaman </h1>
+  
+  <!-- Navbar sederhana -->
+  <nav>
+    <ul class="navbar">
+      <li><a href="/">Beranda</a></li>
+      <li><a href="/tugas-java.html">Tugas Java</a></li>
+    </ul>
+  </nav>
+
+ 
+
+</body>
+</html>
